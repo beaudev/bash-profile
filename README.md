@@ -4,6 +4,7 @@
 
 ### One-liner install
 The installation could be performed with that one liner :
+
     curl -sS https://raw.github.com/beaudev/bash-profile/master/install-bash-profile.sh|bash
 
 What this script is doing is:
