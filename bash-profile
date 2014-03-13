@@ -1,21 +1,28 @@
 #!/bin/bash
 
-source bash-profile.conf
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source ${DIR}/bash-profile.conf
+
+# source my bash config (located in ~/.my-bash-profile.conf) or default if none
+[-f ~/.${MY_BASH_PROFILE_CONF} ] && source ~/.${MY_BASH_PROFILE_CONF} || source ${DIR}/${MY_BASH_PROFILE_CONF}
 
 for gist in "${BASH_GIST_SCRIPTS[@]}"; do
-        if [ ! -d ${MY_PROFILE_PATH}/${gist} ]; then
+        if [ ! -d ~/${MY_PROFILE_PATH}/${gist} ]; then
         (
-        mkdir ${MY_PROFILE_PATH}/${gist}
-        cd $(mktemp -d)
+        mkdir ~/${MY_PROFILE_PATH}/${gist}
+        TMPDIR=$(mktemp -d)
+        cd $TMPDIR
         git clone https://gist.github.com/${gist}.git
-        cp `find . -type f| grep -v .git` ${MY_PROFILE_PATH}/${gist}/${gist}.sh
+        cp `find $TMPDIR -type f| grep -v .git` ~/${MY_PROFILE_PATH}/${gist}/${gist}.sh
         )
         fi
 done
 
-for PATH in ${PROFILE_PATH}/scripts ${MY_PROFILE_PATH}; do
-    for script in `find ~/${PATH} -type d`;do
-        [ -f ~/${PATH}/${script}/${script}.sh ] && source ~/${PATH}/${script}/${script}.sh
+for MYPATH in ~/${PROFILE_PATH}/scripts ~/${MY_PROFILE_PATH}; do
+    cd ${MYPATH}
+    for script in `ls -d */ 2>/dev/null`;do
+        script=${script%%/}
+        [ -f ${MYPATH}/${script}/${script}.sh ] && source ${MYPATH}/${script}/${script}.sh
     done
 done
 
