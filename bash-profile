@@ -1,0 +1,21 @@
+#!/bin/bash
+
+source bash-profile.conf
+
+for gist in "${BASH_GIST_SCRIPTS[@]}"; do
+        if [ ! -d ${MY_PROFILE_PATH}/${gist} ]; then
+        (
+        mkdir ${MY_PROFILE_PATH}/${gist}
+        cd $(mktemp -d)
+        git clone https://gist.github.com/${gist}.git
+        cp `find . -type f| grep -v .git` ${MY_PROFILE_PATH}/${gist}/${gist}.sh
+        )
+        fi
+done
+
+for PATH in ${PROFILE_PATH}/scripts ${MY_PROFILE_PATH}; do
+    for script in `find ~/${PATH} -type d`;do
+        [ -f ~/${PATH}/${script}/${script}.sh ] && source ~/${PATH}/${script}/${script}.sh
+    done
+done
+
