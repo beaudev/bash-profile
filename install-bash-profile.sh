@@ -15,7 +15,7 @@ cd "$HOME"
 [ ! -d ${MY_PROFILE_PATH} ] && mkdir ${MY_PROFILE_PATH}
 
 #configure bash-profile
-if [ "x"`cat $HOME/.bashrc|grep "bash-profile"` == "x" ]; then
+if [ "x`cat $HOME/.bashrc|grep "source ~/${PROFILE_PATH}/bash-profile"`" == "x" ]; then
     echo "source ~/${PROFILE_PATH}/bash-profile">>$HOME/.bashrc
 fi
 
