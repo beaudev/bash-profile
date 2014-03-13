@@ -20,12 +20,11 @@ for gist in "${BASH_GIST_SCRIPTS[@]}"; do
 done
 
 for MYPATH in ~/${PROFILE_PATH}/scripts ~/${MY_PROFILE_PATH}; do
-    (
     cd ${MYPATH}
     for script in `ls -d */ 2>/dev/null`;do
         script=${script%%/}
         [ -f ${MYPATH}/${script}/${script}.sh ] && source ${MYPATH}/${script}/${script}.sh
     done
-    )
 done
+cd $HOME
 
