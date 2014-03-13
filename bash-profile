@@ -14,7 +14,7 @@ for gist in "${BASH_GIST_SCRIPTS[@]}"; do
         cd $TMPDIR
         git clone https://gist.github.com/${gist}.git &>/dev/null
         echo "bash-profile::add Gist (https://gist.github.com/${gist})"
-        cp `find $TMPDIR -type f| grep -v .git` ~/${MY_PROFILE_PATH}/${gist}/${gist}.sh
+        cp `find $TMPDIR -type f -name *.sh | grep -v .git` ~/${MY_PROFILE_PATH}/${gist}/${gist}.sh
         )
         fi
 done
