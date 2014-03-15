@@ -26,5 +26,5 @@ In order to add scripts/aliases, you will need to create public gist and you nee
      '9514322'
      )
 
-That mean that those 3 gists will be synchronized in your bash-profile directory **and** will be sourced
+That mean that those 3 gists will be synchronized in your bash-profile directory (only if they have never been installed yet) **and** will be sourced (through `~/.bashrc` file).
 
