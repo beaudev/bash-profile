@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source ${DIR}/bash-profile.conf
 
-# source my bash config (located in ~/.my-bash-profile.conf) or default if none
+# source my bash config (located in ~/.my-bash-profile.conf) or default bash-profile config if none
 [ -f ~/.${MY_BASH_PROFILE_CONF} ] && source ~/.${MY_BASH_PROFILE_CONF} || source ${DIR}/${MY_BASH_PROFILE_CONF}
 
 for gist in "${BASH_GIST_SCRIPTS[@]}"; do

@@ -9,8 +9,8 @@ The installation could be performed with that one liner :
 
 What this script is doing is:
 
-* Create (if needed) one directory to hold the bash-profile "glue script" with the default script/conf to include
-* Create (if needed) a directory to hold your own scripts defined in your ~/.my-bash-profile.conf file
+* Create (if needed) one directory to hold the bash-profile "glue script" with the default configuration to include
+* Create (if needed) a directory to hold your own scripts defined in your `~/.my-bash-profile.conf` file
 * source the bash-profile at the end of your `~/.bashrc` (simplest way to have it in most of your bash sessions
 
 ##Configuration
