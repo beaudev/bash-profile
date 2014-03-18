@@ -1,4 +1,5 @@
 #!/bin/bash -x
+old_home=$(pwd)
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source ${DIR}/bash-profile.conf
@@ -26,5 +27,6 @@ for MYPATH in ~/${PROFILE_PATH}/scripts ~/${MY_PROFILE_PATH}; do
         [ -f ${MYPATH}/${script}/${script}.sh ] && source ${MYPATH}/${script}/${script}.sh
     done
 done
-cd $HOME
+# Go back to last directory entered usefull when duplicating terminal)
+cd $old_home
 
