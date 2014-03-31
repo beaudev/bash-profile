@@ -26,5 +26,5 @@ In order to add scripts/aliases, you will need to create public gist and you nee
      '9514322'
      )
 
-That mean that those 3 gists will be synchronized in your bash-profile directory (only if they have never been installed yet) **and** will be sourced (through `~/.bashrc` file). The `Id` of the gist can be found in any gist url, usually after the name of the gist author, and is the name of the git repository holding the gist (https://gist.github.com/`Id`.git).
+That mean that those 3 gists will be synchronized in your bash-profile directory (only if they have never been installed yet) **and** will be sourced (through `~/.bashrc` file). The `Id` of the gist can be found in any gist url, usually after the name of the gist author, and is the name of the git repository holding the gist (ex : https://gist.github.com/9147961.git).
 
