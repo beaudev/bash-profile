@@ -7,8 +7,10 @@ source ${DIR}/bash-profile.conf
 # source my bash config (located in ~/.my-bash-profile.conf) or default bash-profile config if none
 [ -f ~/.${MY_BASH_PROFILE_CONF} ] && source ~/.${MY_BASH_PROFILE_CONF} || source ${DIR}/${MY_BASH_PROFILE_CONF}
 
+[ ! -z "$1" && "$1" == "update" ] && update=true
+
 for gist in "${BASH_GIST_SCRIPTS[@]}"; do
-        if [ ! -d ~/${MY_PROFILE_PATH}/${gist} ]; then
+        if [ ! -d ~/${MY_PROFILE_PATH}/${gist} || ! -z $update ]; then
         (
         mkdir ~/${MY_PROFILE_PATH}/${gist}
         TMPDIR=$(mktemp -d)
