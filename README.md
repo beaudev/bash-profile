@@ -3,9 +3,9 @@
 ##Installation
 
 ### One-liner install
-The installation could be performed with that one liner :
+The installation could be performed with that one liner (yeah, curl is needed...) :
 
-    curl -sS https://raw.github.com/beaudev/bash-profile/master/install-bash-profile.sh|bash
+    curl -sSL https://raw.githubusercontent.com/beaudev/bash-profile/master/install-bash-profile.sh|bash
 
 What this script is doing is:
 
