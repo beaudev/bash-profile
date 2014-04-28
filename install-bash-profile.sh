@@ -3,7 +3,7 @@
 PROFILE_REPO="https://github.com/beaudev/bash-profile.git"
 
 #Get global conf
-source <(curl -sS https://raw.github.com/beaudev/bash-profile/master/bash-profile.conf)
+source <(curl -sSL https://raw.github.com/beaudev/bash-profile/master/bash-profile.conf)
 
 command -v git >/dev/null 2>&1  || ( echo "'git' command not found. Please install git first." && exit 1 )
 
