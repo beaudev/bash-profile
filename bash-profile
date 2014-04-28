@@ -10,7 +10,7 @@ source ${DIR}/bash-profile.conf
 [ ! -z "$1" -a "$1" == "update" ] && update=true
 
 for gist in "${BASH_GIST_SCRIPTS[@]}"; do
-        if [ ! -d ~/${MY_PROFILE_PATH}/${gist} -o ! -z $update ]; then
+        if [ ! -d ~/${MY_PROFILE_PATH}/${gist} -o ! -z "$update" ]; then
         (
         mkdir -p ~/${MY_PROFILE_PATH}/${gist}
         TMPDIR=$(mktemp -d)
