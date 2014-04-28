@@ -7,12 +7,12 @@ source ${DIR}/bash-profile.conf
 # source my bash config (located in ~/.my-bash-profile.conf) or default bash-profile config if none
 [ -f ~/.${MY_BASH_PROFILE_CONF} ] && source ~/.${MY_BASH_PROFILE_CONF} || source ${DIR}/${MY_BASH_PROFILE_CONF}
 
-[ ! -z "$1" && "$1" == "update" ] && update=true
+[ ! -z "$1" -a "$1" == "update" ] && update=true
 
 for gist in "${BASH_GIST_SCRIPTS[@]}"; do
-        if [ ! -d ~/${MY_PROFILE_PATH}/${gist} || ! -z $update ]; then
+        if [ ! -d ~/${MY_PROFILE_PATH}/${gist} -o ! -z $update ]; then
         (
-        mkdir ~/${MY_PROFILE_PATH}/${gist}
+        mkdir -p ~/${MY_PROFILE_PATH}/${gist}
         TMPDIR=$(mktemp -d)
         cd $TMPDIR
         git clone https://gist.github.com/${gist}.git &>/dev/null
@@ -21,7 +21,6 @@ for gist in "${BASH_GIST_SCRIPTS[@]}"; do
         )
         fi
 done
-
 for MYPATH in ~/${PROFILE_PATH}/scripts ~/${MY_PROFILE_PATH}; do
     cd ${MYPATH}
     for script in `ls -d */ 2>/dev/null`;do
