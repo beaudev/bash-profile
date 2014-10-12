@@ -2,6 +2,9 @@
 
 PROFILE_REPO="https://github.com/beaudev/bash-profile.git"
 
+
+command -v git >/dev/null 2>&1 || { echo "you need git to install bash-profile" && exit }
+
 #Get global conf
 source <(curl -sSL https://raw.github.com/beaudev/bash-profile/master/bash-profile.conf)
 
