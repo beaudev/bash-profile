@@ -2,13 +2,11 @@
 
 PROFILE_REPO="https://github.com/beaudev/bash-profile.git"
 
-
-command -v git >/dev/null 2>&1 || { echo "you need git to install bash-profile" && exit }
+command -v git >/dev/null 2>&1  || ( echo "'git' command not found. Please install git first." && exit 1 )
 
 #Get global conf
 source <(curl -sSL https://raw.github.com/beaudev/bash-profile/master/bash-profile.conf)
 
-command -v git >/dev/null 2>&1  || ( echo "'git' command not found. Please install git first." && exit 1 )
 
 TMPDIR=$(mktemp -d)
 
