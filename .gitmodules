@@ -1,0 +1,3 @@
+[submodule "scripts/create-nginx-vhost"]
+	path = scripts/create-nginx-vhost
+	url = git@github.com:beaudev/create-nginx-vhost.git
