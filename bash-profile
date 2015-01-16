@@ -13,7 +13,7 @@ for gist in "${BASH_GIST_SCRIPTS[@]}"; do
         if [ ! -d ~/${MY_PROFILE_PATH}/${gist} -o ! -z "$update" ]; then
         (
         mkdir -p ~/${MY_PROFILE_PATH}/${gist}
-        TMPDIR=$(mktemp -d)
+        TMPDIR=$(mktemp -d 2>/dev/null || mktemp -d -t '/tmp/bashprofile')
         cd $TMPDIR
         git clone https://gist.github.com/${gist}.git &>/dev/null
         echo "bash-profile::${update:-Add} Gist (https://gist.github.com/${gist})"
