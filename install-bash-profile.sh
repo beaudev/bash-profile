@@ -8,7 +8,7 @@ command -v git >/dev/null 2>&1  || { echo "'git' command not found. Please insta
 source <(curl -sSL https://raw.github.com/beaudev/bash-profile/master/bash-profile.conf)
 
 
-TMPDIR=$(mktemp -d -t 'bash-profile'`)
+TMPDIR=$(mktemp -d -t '/tmp/bash-profile')
 
 # setup bash-profile
 cd "$HOME"
