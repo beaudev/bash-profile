@@ -3,4 +3,4 @@
 	url = git@github.com:beaudev/create-nginx-vhost.git
 [submodule "scripts/backup-docker"]
 	path = scripts/backup-docker
-	url = git@github.com:beaudev/backup-docker.git	
+	url = git@github.com:beaudev/backup-docker.git
