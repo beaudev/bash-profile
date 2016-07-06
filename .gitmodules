@@ -4,3 +4,6 @@
 [submodule "scripts/backup-docker"]
 	path = scripts/backup-docker
 	url = git@github.com:beaudev/backup-docker.git
+[submodule "scripts/db_tools"]
+	path = scripts/db_tools
+	url = git@github.com:beaudev/db_tools.git
