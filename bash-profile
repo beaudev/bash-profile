@@ -1,4 +1,6 @@
 #!/bin/bash
+
+set -x 
 old_home=$(pwd)
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -10,14 +12,14 @@ source ${DIR}/bash-profile.conf
 [ ! -z "$1" -a "$1" == "update" ] && update="Update"
 
 for gist in "${BASH_GIST_SCRIPTS[@]}"; do
-        if [ ! -d ~/${MY_PROFILE_PATH}/${gist} -o ! -z "$update" ]; then
+        if [ ! -d ${DIR}/${MY_PROFILE_PATH}/${gist} -o ! -z "$update" ]; then
         (
-        mkdir -p ~/${MY_PROFILE_PATH}/${gist}
+        mkdir -p ${DIR}/${MY_PROFILE_PATH}/${gist}
         TMPDIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'bashprofile')
         cd $TMPDIR
         git clone https://gist.github.com/${gist}.git &>/dev/null
         echo "bash-profile::${update:-Add} Gist (https://gist.github.com/${gist})"
-        cp `find $TMPDIR -type f -name *.sh | grep -v .git` ~/${MY_PROFILE_PATH}/${gist}/${gist}.sh
+        cp `find $TMPDIR -type f -name *.sh | grep -v .git` ${DIR}/${MY_PROFILE_PATH}/${gist}/${gist}.sh
         )
         fi
 done
