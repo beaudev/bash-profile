@@ -1,7 +1,20 @@
-**bash-profile** is a simple way to integrate some useful functions and aliases in your bash session. It uses mostly gist
+**bash-profile** is a simple way to integrate some useful functions and aliases in your bash session. It uses mostly gist.
+
+## General philosophy
+
+This glue script is mostly used on my workstations, use it at your own risk ;)
+I host some of the useful scripts I'm using, either on gist or github, as it easy and efficient. 
+
+The convention is as simple as, if **bash-profile** find a script either in the ``scripts/`` directory (for github hosted scripts) or in the ``gist_scripts`` (for gist scripts), he will source them.
+
+### Gist Scripts
+Any gist defining a bash function in a ``.sh`` file will be sourced
+
+
+### Github Scripts
+As soon as a github script is defined (through submodules) he will be sourced with the name if the script file in the github repository is the same as the repository name. THink of it as the entry point, you can then import and read directories within that repository.
 
 ## Installation
-
 ### One-liner install
 The installation could be performed with that one liner (yeah, curl is needed...) :
 
@@ -16,6 +29,12 @@ What this script is doing is:
 ## Configuration
 ### Overwrite default configuration
 In order to configure bash-profile to your need, create a `.my-bash-profile.conf` file in your home, it will overwrite the default one located in `~/.bash-profile.d/my-bash-profile.conf`
+
+### Add "Github script"
+
+you can add github scripts thanks to the git modules, just add a submodule with the wanted github script.
+
+Github script are just a simple way to call compatible github repository with ``bash-profile``,  
 
 ### Add Gist(s) to your bash-profile
 In order to add scripts/aliases, you will need to create public gist and you need to define your `BASH_GIST_SCRIPTS` array in `.my-bash-profile.conf` , which looks like :
