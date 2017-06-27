@@ -1,6 +1,6 @@
 **bash-profile** is a simple way to integrate some useful functions and aliases in your bash session. It uses mostly gist
 
-##Installation
+## Installation
 
 ### One-liner install
 The installation could be performed with that one liner (yeah, curl is needed...) :
@@ -13,11 +13,11 @@ What this script is doing is:
 * Create (if needed) a directory to hold your own scripts defined in your `~/.my-bash-profile.conf` file
 * source the bash-profile at the end of your `~/.bashrc` (simplest way to have it in most of your bash sessions
 
-##Configuration
-###Overwrite default configuration
+## Configuration
+### Overwrite default configuration
 In order to configure bash-profile to your need, create a `.my-bash-profile.conf` file in your home, it will overwrite the default one located in `~/.bash-profile.d/my-bash-profile.conf`
 
-###Add Gist(s) to your bash-profile
+### Add Gist(s) to your bash-profile
 In order to add scripts/aliases, you will need to create public gist and you need to define your `BASH_GIST_SCRIPTS` array in `.my-bash-profile.conf` , which looks like :
 
     BASH_GIST_SCRIPTS=(
