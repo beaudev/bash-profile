@@ -3,7 +3,7 @@
 ## General philosophy
 
 This glue script is mostly used on my workstations, use it at your own risk ;)
-I host some of the useful scripts I'm using, either on gist or github, as it easy and efficient. 
+I host some of the useful scripts I am using, either on gist or github, as it is easy and efficient, but you should be able to add your owns with configuration.
 
 The convention is as simple as, if **bash-profile** find a script either in the ``scripts/`` directory (for github hosted scripts) or in the ``gist_scripts`` (for gist scripts), he will source them.
 
@@ -24,17 +24,20 @@ What this script is doing is:
 
 * Create (if needed) one directory to hold the bash-profile "glue script" with the default configuration to include
 * Create (if needed) a directory to hold your own scripts defined in your `~/.my-bash-profile.conf` file
-* source the bash-profile at the end of your `~/.bashrc` (simplest way to have it in most of your bash sessions
+* Source the bash-profile at the end of your `~/.bashrc` (simplest way to have it in most of your bash sessions
 
 ## Configuration
 ### Overwrite default configuration
 In order to configure bash-profile to your need, create a `.my-bash-profile.conf` file in your home, it will overwrite the default one located in `~/.bash-profile.d/my-bash-profile.conf`
 
-### Add "Github script"
+## Adding scripts
+### Add "Github scripts"
 
-you can add github scripts thanks to the git modules, just add a submodule with the wanted github script.
+You can add github scripts thanks to the git modules, just add a git submodule with the wanted github script.
 
-Github script are just a simple way to call compatible github repository with ``bash-profile``,  
+Github scripts are just a simple way to call compatible github repository/bash aware scripts with ``bash-profile``.
+
+You can also add any other scripts, the only constraints is to use a script directory with the same name of the source holding your script and ending with `.sh`
 
 ### Add Gist(s) to your bash-profile
 In order to add scripts/aliases, you will need to create public gist and you need to define your `BASH_GIST_SCRIPTS` array in `.my-bash-profile.conf` , which looks like :
@@ -45,13 +48,13 @@ In order to add scripts/aliases, you will need to create public gist and you nee
      '9514322'
      )
 
-That mean that those 3 gists will be synchronized in your bash-profile directory (only if they have never been installed yet) **and** will be sourced (through `~/.bashrc` file). The `Id` of the gist can be found in any gist url, usually after the name of the gist author, and is the name of the git repository holding the gist (ex : https://gist.github.com/9147961.git).
+It means that those 3 gists will be synchronized in your bash-profile directory (only if they have never been installed yet) **and** will be sourced (through `~/.bashrc` file). The `Id` of the gist can be found in any gist url, usually after the name of the gist author, and is the name of the git repository holding the gist (ex : https://gist.github.com/9147961.git).
 
 
 ## Existing scripts
 ### Gist scripts
 Check the current default [gist scripts list](my-bash-profile.conf)
- 
+
 
 ### Github scripts
 Some examples:

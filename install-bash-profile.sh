@@ -12,12 +12,12 @@ TMPDIR=$(mktemp -d 2>/dev/null || mktemp -d -t '/tmp/bashprofile')
 
 # setup bash-profile
 cd "$HOME"
-[ ! -d ${PROFILE_PATH} ] && git clone ${PROFILE_REPO} ${PROFILE_PATH} || (cd ${PROFILE_PATH} && git pull)
+[ ! -d ${PROFILE_PATH} ] && git clone ${PROFILE_REPO} ${PROFILE_PATH} || (cd ${PROFILE_PATH} && git pull && echo "bash-profile updated" )
 [ ! -d ${MY_PROFILE_PATH} ] && mkdir ${MY_PROFILE_PATH}
 
 #configure bash-profile
-if [ "x`cat $HOME/.bashrc|grep "source ~/${PROFILE_PATH}/bash-profile"`" == "x" ]; then
-    echo "source ~/${PROFILE_PATH}/bash-profile">>$HOME/.bashrc
+if [ "x`grep "source ~/${PROFILE_PATH}/bash-profile" $HOME/.bashrc`" == "x" ]; then
+    echo "[ -f ~/${PROFILE_PATH}/bash-profile ] && source ~/${PROFILE_PATH}/bash-profile">>$HOME/.bashrc
 fi
 
 echo "Congratulation, bash-profile has been setup"
