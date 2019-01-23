@@ -50,6 +50,9 @@ In order to add scripts/aliases, you will need to create public gist and you nee
 
 It means that those 3 gists will be synchronized in your bash-profile directory (only if they have never been installed yet) **and** will be sourced (through `~/.bashrc` file). The `Id` of the gist can be found in any gist url, usually after the name of the gist author, and is the name of the git repository holding the gist (ex : https://gist.github.com/9147961.git).
 
+You can update the linked gist by calling the main bash-profile with the `update` argument
+
+    $ ~/.bash-profile.d/bash-profile update
 
 ## Existing scripts
 ### Gist scripts
