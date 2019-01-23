@@ -1,3 +1,6 @@
+# No dupes
+export HISTCONTROL=ignoreboth:erasedups
+
 # Eternal bash history.
 # ---------------------
 # Undocumented feature which sets the size to "unlimited".
