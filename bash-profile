@@ -22,7 +22,7 @@ for gist in "${BASH_GIST_SCRIPTS[@]}"; do
         )
         fi
 done
-for MYPATH in ~/${PROFILE_PATH}/scripts ~/${MY_PROFILE_PATH}; do
+for MYPATH in ~/${PROFILE_PATH}/scripts ${DIR}/${MY_PROFILE_PATH}; do
     cd ${MYPATH}
     for script in `ls -d */ 2>/dev/null`;do
         script=${script%%/}
